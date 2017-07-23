@@ -8,4 +8,5 @@
    **NOTE**: For some reason the `.` is needed to change the directory
 3. `docker-compose build`
 4. `dweb bundle`
+   **NOTE**: `dweb` is alias for `docker-compose run --rm web`
 5. `dweb bundle exec jekyll new my blog`
