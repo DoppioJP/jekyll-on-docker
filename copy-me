@@ -1,0 +1,20 @@
+#!/bin/bash
+
+HERE=$(dirname "$BASH_SOURCE")
+
+DESTINATION=$(pwd)/$1
+mkdir -p $DESTINATION
+cd $DESTINATION
+
+DESTINATION_DIRNAME=$(basename "$(pwd -P)")
+
+# Replacing the default docker-compose image name with the destination directory
+# That's how docker-compose works
+sed "s/jekyllondocker/$DESTINATION_DIRNAME/" $HERE/docker-compose.yml > $DESTINATION/docker-compose.yml
+
+# Copy other scaffole files
+cp $HERE/Dockerfile $DESTINATION
+cp $HERE/Gemfile $DESTINATION
+cp $HERE/Gemfile.lock $DESTINATION
+cp $HERE/.gitignore $DESTINATION
+
