@@ -9,4 +9,8 @@
 3. `docker-compose build`
 4. `dweb bundle`
    **NOTE**: `dweb` is alias for `docker-compose run --rm web`
-5. `dweb bundle exec jekyll new my blog`
+5. We will need to force Jekyll to create new blog and overwrite some files of ours
+   ```
+   dweb bundle exec jekyll new --force .
+   ```
+
