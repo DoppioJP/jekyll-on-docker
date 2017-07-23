@@ -13,4 +13,9 @@
    ```
    dweb bundle exec jekyll new --force .
    ```
-
+6. In `_config.yml` exlude the docker files
+   ```
+   exclude:
+     - Dockerfile
+     - docker-compose.yml
+   ```
