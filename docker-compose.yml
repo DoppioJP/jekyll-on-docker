@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     build: .
-    command: bundle exec jekyll serve
+    command: bundle exec jekyll serve --force_polling -H 0.0.0.0 -P 4000 --watch --drafts
     volumes:
       - .:/usr/src/app
     ports:
